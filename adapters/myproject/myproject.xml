@@ -1,1 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed Materials - Property of IBM 5725-G92 (C) Copyright IBM Corp. 
+	2011, 2013. All Rights Reserved. US Government Users Restricted Rights - 
+	Use, duplication or disclosure restricted by GSA ADP Schedule Contract with 
+	IBM Corp. -->
+<wl:adapter name="myproject" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:wl="http://www.worklight.com/integration" xmlns:sql="http://www.worklight.com/integration/sql">
 
+	<displayName>myproject</displayName>
+	<description>myproject</description>
+	<connectivity>
+		<connectionPolicy xsi:type="sql:SQLConnectionPolicy">
+			<!-- Example for using a JNDI data source, replace with actual data source 
+				name -->
+			<!-- <dataSourceJNDIName>java:/data-source-jndi-name</dataSourceJNDIName> -->
+
+			<!-- Example for using MySQL connector, do not forget to put the MySQL 
+				connector library in the project's lib folder -->
+			<dataSourceDefinition>
+				<driverClass>com.ibm.db2.jcc.DB2Driver</driverClass>
+				<url>jdbc:db2://localhost:50000/project</url>
+				<user>SANTHU SAI</user>
+				<password>santoshsai@b</password>
+			</dataSourceDefinition>
+		</connectionPolicy>
+		<loadConstraints maxConcurrentConnectionsPerNode="5" />
+	</connectivity>
+
+	<!-- Replace this with appropriate procedures -->
+	<procedure name="login" />
+	<procedure name="procedure1" />
+	<procedure name="procedure2" />
+	<procedure name="procedure3" />
+	<procedure name="procedure4" />
+	<procedure name="purchases" />
+	<procedure name="payments" />
+	<procedure name="authorize" />
+	<procedure name="loadPayments" />
+	<procedure name="loadPurchases" />
+	<procedure name="getSaleById" />
+	<procedure name="loadUPDates" />
+	<procedure name="loadItemIds" />
+	<procedure name="loadCustList" />
+	<procedure name="saveOrder" />
+</wl:adapter>
